@@ -173,11 +173,12 @@ export function useLoadData() {
   const config = useAppConfig();
 
   var api: ClientApi;
-  if (config.modelConfig.model === "gemini-pro") {
-    api = new ClientApi(ModelProvider.GeminiPro);
-  } else {
-    api = new ClientApi(ModelProvider.GPT);
-  }
+  // if (config.modelConfig.model === "gemini-pro") {
+  //   api = new ClientApi(ModelProvider.GeminiPro);
+  // } else {
+  //   api = new ClientApi(ModelProvider.GPT);
+  // }
+  api = new ClientApi(ModelProvider.GPT);
   useEffect(() => {
     (async () => {
       const models = await api.llm.models();
