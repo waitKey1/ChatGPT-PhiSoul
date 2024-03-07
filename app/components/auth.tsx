@@ -18,6 +18,7 @@ export function AuthPage() {
   const goHome = () => {
     accessStore.update((access) => {
       access.disableGPT4 = true;
+      access.username = "旅行者";
     });
     navigate(Path.Home);
   };
@@ -32,8 +33,8 @@ export function AuthPage() {
       });
       navigate(Path.Chat);
     } else if (
-      accessStore.username == "Sztu@2024" &&
-      accessStore.password == "1024"
+      accessStore.username == "Sztu@2023" &&
+      accessStore.password == "1034"
     ) {
       // 登录成功
       accessStore.update((access) => {
@@ -41,8 +42,38 @@ export function AuthPage() {
       });
       navigate(Path.Chat);
     } else if (
+      accessStore.username == "Sztu@2024" &&
+      accessStore.password == "1034"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
       accessStore.username == "Sztu@2025" &&
-      accessStore.password == "1024"
+      accessStore.password == "1034"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "Sztu@2026" &&
+      accessStore.password == "1034"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "Sztu@2027" &&
+      accessStore.password == "1034"
     ) {
       // 登录成功
       accessStore.update((access) => {
@@ -63,7 +94,9 @@ export function AuthPage() {
       access.openaiApiKey = "";
       access.accessCode = "meta";
     });
-  }; // Reset access code to empty string
+  };
+
+  // Reset access code to empty string
 
   // 获取元素
   const loginButton: HTMLElement | null =
