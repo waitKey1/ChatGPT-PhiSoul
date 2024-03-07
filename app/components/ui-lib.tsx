@@ -436,7 +436,7 @@ export function showImageModal(img: string) {
     ),
   });
 }
-
+import { useAccessStore } from "../store";
 export function Selector<T>(props: {
   items: Array<{
     title: string;
@@ -448,12 +448,16 @@ export function Selector<T>(props: {
   onClose?: () => void;
   multiple?: boolean;
 }) {
+  const accessStore = useAccessStore();
   return (
     <div className={styles["selector"]} onClick={() => props.onClose?.()}>
       <div className={styles["selector-content"]}>
         <List>
           {props.items.map((item, i) => {
             const selected = props.defaultSelectedValue === item.value;
+            if (accessStore.disableGPT4 && item.title.startsWith("gpt-4")) {
+              return null; // 返回null表示跳过该项
+            }
             return (
               <ListItem
                 className={styles["selector-item"]}

@@ -1,0 +1,106 @@
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    border: 2px solid gray;
+    margin:3vh,3vw,3vh,3vh;
+    overflow-y:scroll ;
+  }
+  .top {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    color: #fff; /* 设置文字颜色为白色 */
+    background-image: linear-gradient(to right, #9bcfeb 0%, #3a8af3 90%); /* 添加渐变背景 */
+    padding: 20px; /* 添加一些内边距 */
+    margin: 10px 0; /* 添加上下外边距 */
+    border-radius: 5px; /* 圆角边框 */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 添加阴影效果 */
+    transition: transform 0.2s ease-in-out; /* 添加过渡效果 */
+  }
+  
+  .top:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3); /* 鼠标悬停时阴影效果更明显 */
+  }
+  
+  .tip1, .tip2 {
+    font-family: 'Roboto', sans-serif; /* 使用现代感的字体 */
+    color: #333; /* 深色文字颜色，给人以科技感 */
+    text-align: center;
+    background-color: #f4f4f4; /* 轻微的背景色，与科技感配合 */
+    padding: 10px 0; /* 添加一些内边距 */
+    border-left: 4px solid #09c; /* 添加左侧边框，增加设计感 */
+  }
+  
+  .tip1 {
+    font-size: 18px;
+    margin-top: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* 细微的文字阴影 */
+  }
+  
+  .tip2 {
+    font-size: 16px;
+    margin-top: 5px;
+    opacity: 0.9; /* 文字透明度降低，增加层次感 */
+  }
+  
+
+
+// 容器  
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 600px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.plan-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.plan-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.plan-features li {
+  margin-bottom: 5px;
+}
+
+.plan-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}

@@ -7,13 +7,15 @@ import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
+import UserIcon from "../icons/break.svg";
 import CloseIcon from "../icons/close.svg";
 import DeleteIcon from "../icons/delete.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
+import WhiteIcon from "../icons/white.svg";
 import DragIcon from "../icons/drag.svg";
-
 import Locale from "../locales";
+import { useAccessStore } from "../store";
 
 import { useAppConfig, useChatStore } from "../store";
 
@@ -130,6 +132,8 @@ function useDragSideBar() {
 
 export function SideBar(props: { className?: string }) {
   const chatStore = useChatStore();
+  const accessStore = useAccessStore();
+  // username
 
   // drag side bar
   const { onDragStart, shouldNarrow } = useDragSideBar();
@@ -155,10 +159,16 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          NextChat
+          哲灵AI
         </div>
-        <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+        <div className={styles["sidebar-sub-title"]}>您的终生私人助手...</div>
+        <br />
+        <div className="username" style={{ color: "#333333" }}>
+          <div className={`no-dark ${styles["auth-logo"]}`}>
+            <UserIcon />
+          </div>
+
+          <b>欢迎回来 {accessStore.username}</b>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -199,6 +209,39 @@ export function SideBar(props: { className?: string }) {
         <ChatList narrow={shouldNarrow} />
       </div>
 
+      <div className={styles["sidebar-middle"]}>
+        <div className={styles["sidebar-actions"]}>
+          <IconButton
+            icon={<WhiteIcon />}
+            text={shouldNarrow ? undefined : "开通会员"}
+            onClick={() => {
+              if (config.dontShowMaskSplashScreen) {
+                chatStore.newSession();
+                navigate(Path.VIP);
+              } else {
+                navigate(Path.VIP);
+              }
+            }}
+          />
+        </div>
+
+        <div className={styles["sidebar-actions"]}>
+          <IconButton
+            icon={<WhiteIcon />}
+            text={
+              shouldNarrow ? undefined : "当前用户：" + accessStore.username
+            }
+          />
+        </div>
+
+        <div className={styles["sidebar-actions"]}>
+          <IconButton
+            icon={<WhiteIcon />}
+            text={shouldNarrow ? undefined : "导出当前对话"}
+          />
+        </div>
+      </div>
+
       <div className={styles["sidebar-tail"]}>
         <div className={styles["sidebar-actions"]}>
           <div className={styles["sidebar-action"] + " " + styles.mobile}>
@@ -216,6 +259,7 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
+
           <div className={styles["sidebar-action"]}>
             <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
               <IconButton icon={<GithubIcon />} shadow />

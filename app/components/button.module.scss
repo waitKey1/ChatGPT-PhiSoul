@@ -76,8 +76,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
+  
   &:not(:first-child) {
     margin-left: 5px;
   }
+
 }

@@ -310,6 +310,23 @@
       }
     }
   }
+ 
+}
+
+
+.sidebar-middle {
+  display: flex;
+  flex-direction: column;
+ 
+  margin:0 20px 0 20px;
+  
+  .sidebar-actions {
+    flex-direction: column;
+    font-size: 50px;
+    margin:0.3vh;
+
+
+  }
 }
 
 .sidebar-tail {

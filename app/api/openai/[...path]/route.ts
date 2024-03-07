@@ -7,7 +7,6 @@ import { auth } from "../../auth";
 import { requestOpenai } from "../../common";
 
 const ALLOWD_PATH = new Set(Object.values(OpenaiPath));
-
 function getModels(remoteModelRes: OpenAIListModelResponse) {
   const config = getServerSideConfig();
 
