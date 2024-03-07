@@ -9,7 +9,7 @@ import Locale from "../locales";
 import BotIcon from "../icons/break.svg";
 import { useEffect } from "react";
 import { getClientConfig } from "../config/client";
-import { authLogin } from "../extend/auth";
+import { AuthLogin } from "../extend/auth";
 import React, { useState } from "react";
 export function AuthPage() {
   const navigate = useNavigate();
