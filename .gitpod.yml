@@ -5,7 +5,8 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: yarn install && yarn run dev
+  - init: yarn install && yarn run dev | set -e
     command: yarn run dev
 
+      
 
