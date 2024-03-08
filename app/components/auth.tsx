@@ -11,6 +11,11 @@ import { useEffect } from "react";
 import { getClientConfig } from "../config/client";
 import { AuthLogin } from "../extend/auth";
 import React, { useState } from "react";
+interface UserData {
+  // 定义您从 API 获取的用户数据的类型
+  password: string;
+  name: string;
+}
 export function AuthPage() {
   const navigate = useNavigate();
   const accessStore = useAccessStore();
@@ -25,6 +30,8 @@ export function AuthPage() {
   const goChat = () => navigate(Path.Chat);
 
   const loaginAuto = () => {
+    // 使用 useState 钩子定义状态
+
     // 为了演示，我们假设任何用户都是有效的，并返回一个简单的消息
     if (accessStore.username == "ad" && accessStore.password == "ad") {
       // 登录成功
@@ -74,6 +81,26 @@ export function AuthPage() {
     } else if (
       accessStore.username == "Sztu@2027" &&
       accessStore.password == "1034"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "hello2024" &&
+      accessStore.password == "1024"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "hello2025" &&
+      accessStore.password == "1024"
     ) {
       // 登录成功
       accessStore.update((access) => {
@@ -166,8 +193,11 @@ export function AuthPage() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  //拦截
+  // 定义用户对象的类型
+  interface User {
+    passware: string;
+    name: string;
+  }
 
   return (
     <div className={styles["auth-page"]}>
