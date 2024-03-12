@@ -108,6 +108,106 @@ export function AuthPage() {
       });
 
       navigate(Path.Chat);
+    } else if (
+      accessStore.username == "mgc2024" &&
+      accessStore.password == "2024"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "mgc2025" &&
+      accessStore.password == "2025"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "mgc2026" &&
+      accessStore.password == "2026"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "mgc2027" &&
+      accessStore.password == "2027"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "mgc2028" &&
+      accessStore.password == "2028"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "cyy2024" &&
+      accessStore.password == "2024"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "cyy2025" &&
+      accessStore.password == "2025"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "cyy2026" &&
+      accessStore.password == "2026"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "cyy2027" &&
+      accessStore.password == "2027"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "cyy2028" &&
+      accessStore.password == "2028"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
     } else {
       // 登录失败
       accessStore.update((access) => {
