@@ -208,6 +208,36 @@ export function AuthPage() {
       });
 
       navigate(Path.Chat);
+    } else if (
+      accessStore.username == "zlc2025" &&
+      accessStore.password == "1034"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "sztu2020" &&
+      accessStore.password == "2020"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
+    } else if (
+      accessStore.username == "sztu2021" &&
+      accessStore.password == "2021"
+    ) {
+      // 登录成功
+      accessStore.update((access) => {
+        access.disableGPT4 = false;
+      });
+
+      navigate(Path.Chat);
     } else {
       // 登录失败
       accessStore.update((access) => {
